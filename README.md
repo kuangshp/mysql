@@ -148,3 +148,26 @@
     ```
     
 ### 七、子查询
+
+>重要一点,在`mysql`语句中通过`select`查询出来的也是一张表，所以可以继续进行查询等操作
+
+* 1、一种的`where`型的子查询
+    * `select 列名1,列名2... from 表名 where (select ...)`
+
+        ```mysql
+        # 可以直接这样写查询年龄大于20的
+        select * from emp where (select age >20);
+        
+        #根据某一个人的年龄作为条件
+        select * from emp where age > (select age from emp where id= 3)
+        ```
+* 2、一种是`from`的子查询
+    * `select 列名1,列名2... from 表1 as 别名,(select 列名1,列名2 from 表2) as 别名 where 条件`
+    * 使用`from`的子查询要使用别名,有下面两种方式指定别名
+        *  `select * from 表名 as 别名`
+        * `select * from 表名 别名`
+    
+        ```mysql
+        select * from emp as em,(select * from dept) as de where em.dept_id=de.dept_id;
+        ```
+    
