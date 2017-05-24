@@ -94,4 +94,57 @@
 * 9、`trim`的使用:`select * from 表名 where 列名= trim(值)`
 * 10、`between`查询区域范围:`select * from 表名 where 字段 between 条件1 and 条件2`
 * 11、`in`的使用:`select * from 表名 where 字段 in (值1,值2);`
-* 12、
+
+### 六、多表查询
+* 1、左连接 [`表A查询...left join 表B on 关联条件`]
+* 2、右连接 [`表A查询...right join 表B on 关联条件`]  
+* 3、内连接 [`表A查询...[inner] join 表B on 关联条件`]
+
+>总结:
+
+* 1、如果A左连接B 那么主动权在A
+* 2、如果A右连接B 那么主动权在B
+
+
+---
+
+* 1、创建一个员工表
+
+
+    ```mysql
+    create table emp(
+    	id int primary key auto_increment comment "用户id",
+    	name varchar(100) comment "用户名",
+    	age int comment "用户名",
+    	dept_id int comment "部门表id"
+    );
+    ```
+* 2、创建一个部门表
+
+    ```mysql
+    create table dept(
+        dept_id int comment "部门表id",
+        dept_name varchar(100) comment "部门名称"
+    );
+    ```
+    
+* 3、插入数据
+
+    ```mysql
+    insert into emp(name,age,dept_id) values("张三",20,1),("李四",25,2),("王五",22,1),("马六",28,2),("钱二",30,3);
+    insert into dept(dept_id,dept_name) values(1,"人事部"),(2,"技术部"),(3,"财务部");
+    ```
+  
+* 4、多表查询
+
+    ```mysql
+    select * from emp left join dept on emp.dept_id = dept.dept_id;
+    
+    select * from emp right join dept on emp.dept_id=dept.dept_id;
+    
+    select * from emp inner join dept on emp.dept_id=dept.dept_id;
+    
+    select * from emp join dept on emp.dept_id=dept.dept_id;
+    ```
+    
+### 七、子查询
