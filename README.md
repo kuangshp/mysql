@@ -89,7 +89,7 @@
 * 4、计算`count`:`select count(*) as 别名 from 表名 where 条件`
 * 5、分组查询`group`:`select count(*) from 表名 group by 列名`
 * 6、`having`是对分组后继续过滤:`select count(*) from 表名 group by 列名 having count(*) 条件5;`
-* 7、分组后排序:``select count(*) from 表名 group by 列名 order by count(*) desc`
+* 7、分组后排序:`select count(*) from 表名 group by 列名 order by count(*) desc`
 * 8、查询非空的:`select * from 表名 where 列名 is not null`
 * 9、`trim`的使用:`select * from 表名 where 列名= trim(值)`
 * 10、`between`查询区域范围:`select * from 表名 where 字段 between 条件1 and 条件2`
