@@ -170,4 +170,32 @@
         ```mysql
         select * from emp as em,(select * from dept) as de where em.dept_id=de.dept_id;
         ```
+        
+### 八、`mysql`中的索引
+
+* 1、普通索引
+    * `create index 索引名 on 表名(列名)`
+    * `alter table 表名 add index 索引名(列名)`
+    * 直接创建表的时候`create table 表名(...index 索引名(列名))`
+* 2、唯一索引    
+    * `create unique index 索引名 on 表名(列名)` 
+    * `alter table 表名 add unique index 索引名(列名)`
+    * 直接在创建表的时候`create table 表名(...unique index 索引名(列名))`
+* 3、全文索引
+    * 注意`mysql`的引擎哟是`myisam`(`alter table 表名 engine myisam`) 
+    * `alter table 表名 add fulltext 索引名(列名)`
+    * `create fulltext index 索引名 on 表名(列名)` 
+* 4、主键索引 `primary key`
+
+>查看索引
+
+* 1、`show indexes from 表名`
+* 2、`show keys from 表名`
+* 3、`show index from 表名`
+
+
+>删除索引的方法
+
+* 1、`alter table 表名 drop index 索引名称`
+* 2、`drop index 索引名 on 表名`
     
