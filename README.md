@@ -50,7 +50,7 @@
 ||添加主键|alter table 表名 change 旧列 新列 类型 primary key|
 ||添加主键|alter table 表名 add primary key(列名1，列名2)|
 |unique|添加唯一约束|创建表的时候直接在字段中添加unique|
-||手动添加唯一约束|alter table 表名 add 列名 类型 unique|
+||手动添加唯一约束|alter table 表名 add unique (列名)|
 ||手动删除唯一约束|alter table 表名 drop index 列名|
 ||删除外键约束|alter table 表名 drop foreign key 约束名字|
 ||非空约束|not null|
