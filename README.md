@@ -33,7 +33,7 @@
 | rename             | 修改表名                 | alter table 名字 1 rename to 名字 2                                                                 |
 | modify             | 修改列的属性             | alter table 表名 modify 列名 新类型                                                                 |
 |                    | 修改列名与属性           | alter table 表名 change 旧列名称 新列名称 列属性                                                    |
-|                    | 新增列                   | alter tabel 表名 add 列名 列属性                                                                    |
+|                    | 新增列                   | alter tabel 表名 add 列名 列属性(ALTER TABLE resource ADD COLUMN url VARCHAR(150) AFTER name)                                                                    |
 |                    | 删除列                   | alter table 表名 drop 列名                                                                          |
 | order by 列名 asc  | 升序查询                 | select \* from 表名 order by id asc                                                                 |
 | order by 列名 desc | 降序查询                 | select \* from 表名 order by id desc                                                                |
